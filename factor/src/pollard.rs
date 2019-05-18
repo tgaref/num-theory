@@ -37,7 +37,6 @@ pub fn prime_factors(n: &Mpz) -> Vec<Mpz> {
     while !ns.is_empty() {
         m = ns.pop().unwrap();
         if m.probab_prime(6) != ProbabPrimeResult::NotPrime {
-           println!("Found: {:?}", m);
             ps.push(m);
         } else {
             let (n1, n2) = split(&m);
