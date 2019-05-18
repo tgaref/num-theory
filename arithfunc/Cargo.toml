@@ -1,0 +1,8 @@
+[package]
+name = "arithfunc"
+version = "0.1.0"
+authors = ["Theo Garefalakis <tgaref@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+rust-gmp = "0.5.0"
