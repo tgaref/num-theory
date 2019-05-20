@@ -27,7 +27,7 @@ fn split(n: &Mpz) -> (Mpz, Mpz) {
     (n.div_floor(&d), d)
 }
 
-pub fn prime_factors(n: &Mpz) -> Vec<Mpz> {
+fn pr_fact(n: &Mpz) -> Vec<Mpz> {
     if *n == Mpz::one() {
         return Vec::new()
     }
@@ -69,13 +69,13 @@ fn compute_pairs(ps: Vec<Mpz>) -> Vec<(Mpz,u32)> {
     result
 }
                            
-pub fn factor(n: &mut Mpz) -> Vec<(Mpz,u32)> {
+pub fn factor(n: &Mpz) -> Vec<(Mpz,u32)> {
     if *n == Mpz::zero() || *n == Mpz::one() {
         return vec![]
     }
-    let mut ps1 = common::remove_primes(n, &Mpz::from(100));
-    let mut ps2 = compute_pairs(prime_factors(n));
+    let mut m = n.clone();
+    let mut ps1 = common::remove_primes(&mut m, &Mpz::from(100));
+    let mut ps2 = compute_pairs(pr_fact(&mut m));
     ps1.append(&mut ps2);
     ps1
 }
-    

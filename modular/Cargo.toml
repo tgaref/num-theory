@@ -6,3 +6,5 @@ edition = "2018"
 
 [dependencies]
 rust-gmp = "0.5.0"
+factor = { path = "../factor" }
+arithfunc = { path = "../arithfunc" }
