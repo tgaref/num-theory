@@ -1,0 +1,2 @@
+This is an implementation of various basic number theoretic functions.
+The underlying integer type is gmp::mpz::Mpz.
